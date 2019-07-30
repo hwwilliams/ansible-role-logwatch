@@ -1,0 +1,26 @@
+---
+- name: Ensure Logwatch Is Present
+  become: true
+  package:
+    name: '{{ logwatch_packages }}'
+    state: present
+
+- name: Ensure Logwatch Configuration File Is Present
+  become: true
+  template:
+    src: templates/logwatch.conf.j2
+    dest: /etc/logwatch/conf/logwatch.conf
+    mode: 0644
+
+- name: Remove Default Logwatch Cron Job
+  become: true
+  file:
+    path: /etc/cron.daily/00logwatch
+    state: absent
+
+- name: Ensure Logwatch Cron Job Is Present
+  become: true
+  cron:
+    name: logwatch
+    job: /usr/sbin/logwatch
+    special_time: "{{logwatch_cron_time}}"

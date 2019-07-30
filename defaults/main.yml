@@ -1,0 +1,33 @@
+---
+# Name of necessary package(s) for Logwatch
+# installation.
+logwatch_packages:
+  - logwatch
+
+# Configuration Options for logwatch.conf
+logwatch_mailfrom: Logwatch
+logwatch_mailto: root@localhost
+logwatch_detail: low
+logwatch_range: yesterday
+logwatch_output: stdout
+logwatch_format: text
+
+# Set as false to not run for all services
+logwatch_service_all: true
+
+## Add a list of extra services to exclude
+## Or add a list of services to include if
+## logwatch_service_all is false
+# Examples below for excluding services:
+# logwatch_service_extra:
+#   - '-zz-network'
+#   - '-zz-sys'
+logwatch_service_exclude: []
+# Examples below for including services:
+# logwatch_service_extra:
+#   - pam_pwdb
+#   - pam
+logwatch_service_include: []
+
+# Frequency that the Logwatch cron job will run
+logwatch_cron_time: weekly
