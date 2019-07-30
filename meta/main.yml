@@ -1,0 +1,15 @@
+---
+dependencies: []
+
+galaxy_info:
+  role_name: logwatch
+  author: hwwilliams
+  description: Installs Logwatch on Debian/Ubuntu and CentOS/Fedora/Redhat based Linux
+  license: license (MIT)
+  min_ansible_version: 2.4
+  platforms: []
+  galaxy_tags:
+    - logwatch
+    - metric
+    - monitoring
+    - system
