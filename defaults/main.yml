@@ -30,5 +30,5 @@ logwatch_service_exclude: []
 logwatch_service_include: []
 
 # Frequency that the Logwatch cron job will run
-logwatch_cron_time: weekly
+logwatch_cron_time: daily
 
