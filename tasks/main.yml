@@ -23,4 +23,4 @@
   cron:
     name: logwatch
     job: /usr/sbin/logwatch
-    special_time: "{{logwatch_cron_time}}"
+    special_time: "{{ logwatch_cron_time }}"
