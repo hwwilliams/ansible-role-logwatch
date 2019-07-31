@@ -12,4 +12,3 @@
           - hardware
   roles:
     - role: hwwilliams.logwatch
-
