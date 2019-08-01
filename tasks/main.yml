@@ -18,6 +18,15 @@
     path: /etc/cron.daily/00logwatch
     state: absent
 
+- name: Include Dynamic Distribution Cron Package Variables
+  include_vars: "{{ ansible_os_family | lower }}.yml"
+
+- name: Ensure Cron and Related Packages Are Present
+  become: true
+  package:
+    name: '{{ cron_packages }}'
+    state: present
+
 - name: Ensure Logwatch Cron Job Is Present
   become: true
   cron:
