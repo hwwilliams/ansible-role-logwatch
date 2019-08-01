@@ -10,5 +10,9 @@
           - '!all'
           - network
           - hardware
+    - name: Update Apt Cache
+      apt: update_cache=yes cache_valid_time=600
+      when: ansible_os_family | lower == 'debian'
+      changed_when: false
   roles:
     - role: hwwilliams.logwatch
