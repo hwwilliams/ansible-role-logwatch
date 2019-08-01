@@ -1,0 +1,5 @@
+---
+cron_packages:
+    - cronie
+    - cronie-anacron
+    - crontabs
