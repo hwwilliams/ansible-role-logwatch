@@ -7,7 +7,22 @@ galaxy_info:
   description: Installs Logwatch on Debian/Ubuntu and CentOS/Fedora/Redhat based Linux
   license: license (MIT)
   min_ansible_version: 2.4
-  platforms: []
+  platforms:
+    - name: EL
+      versions:
+        - 6
+        - 7
+    - name: Debian
+      versions:
+        - stretch
+        - buster
+    - name: Fedora
+      versions:
+        - 27
+    - name: Ubuntu
+      versions:
+        - xenial
+        - bionic
   galaxy_tags:
     - logwatch
     - metric
